@@ -125,13 +125,13 @@ You can adjust head position or size.
 
 ### Parameters:
 
-| Parameter | Description |
-|----------|-------------|
-| `x` | Horizontal offset |
-| `y` | Vertical offset |
-| `scale` | Head scale |
-| `hat` | Show hat layer |
-| `slim` | Force slim skin model |
+| Parameter | Description | Data Type |
+|----------|-------------|-------------|
+| `x` | Horizontal offset | int |
+| `y` | Vertical offset | int |
+| `scale` | Head scale | double |
+| `hat` | Show hat layer | boolean |
+| `slim` | Force slim skin model | boolean |
 
 ### Example:
 
