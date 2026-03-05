@@ -16,17 +16,18 @@ Made this quite a while ago for Drag Championship (MCC recreation). Maybe someon
 ## Features
 - Multiple font support
 - Disable certain packets
-- Custom "color code" for font
-- Only allow text to change font if regex matches
+- Custom "color code" for font switching
+- Optional regex filtering
+- Noxesium player head placeholders (bossbars, scoreboards, etc.) (v2.0.0-experimental only)
 - Reload command (v1.2.0 only)
 
 ## Supported versions
-In theory: **1.19**–**1.21**\
-Tested versions: **1.19.2**, **1.20.2**, **1.21.3**
+In theory: **1.19**–**1.21.11**\
+Tested versions: **1.19.2**, **1.20.2**, **1.21.3**, **1.21.11**
 
-### **Version 1.2.0 requires Java version 21!!!**
+### **Version 2.0.0-experimental requires Java version 21!!!**
 
-If you are using v1.2.0 on 1.19 version, you might see "Unsupported class file major version 65" error,
+If you are using v2.0.0 on 1.19 version, you might see "Unsupported class file major version 65" error,
 ignore it, the plugin will work anyway, and I won't bother to fix this.
 
 ## So, how does it work?
@@ -87,6 +88,58 @@ config-version: 1
 
 ### Forced fonts
 Forced font means that it will use that specific font only and special symbol won't work. **Note** that you need to specify configuration key and not actual font!
+
+---
+
+# Noxesium Player Heads (v2.0.0-experimental)
+
+</div>
+<div align="left">
+    <img src="assets/noxesium.png" alt="noxesium heads example"/>
+</div>
+
+This plugin can convert text placeholders into Noxesium player heads.
+This is useful for systems that only support plain text (for example Skript bossbars).
+Instead of creating components manually, you can simply place a placeholder inside the text.
+
+## Placeholder format
+
+```
+<noxhead:UUID>
+```
+
+### Example:
+
+```
+<noxhead:3e7a89ee-c4e2-4392-a317-444b861b0794>
+```
+
+## Position and scale parameters
+You can adjust head position or size.
+
+```
+<noxhead:UUID:y=-2>
+<noxhead:UUID:x=1:y=-1>
+<noxhead:UUID:y=-1:scale=0.9>
+```
+
+### Parameters:
+
+| Parameter | Description |
+|----------|-------------|
+| `x` | Horizontal offset |
+| `y` | Vertical offset |
+| `scale` | Head scale |
+| `hat` | Show hat layer |
+| `slim` | Force slim skin model |
+
+### Example:
+
+```
+<noxhead:3e7a89ee-c4e2-4392-a317-444b861b0794:y=-2:scale=0.9>
+```
+
+---
 
 ### What's a special symbol? (The default is `$u`)
 The special symbol is a custom "color code" that replaces text's font. The font is changed until it crosses paths with another color (`$usome &ctext`, only `some` will get its font changed).

@@ -1,7 +1,7 @@
 name: TextFontModifier
 version: '${version}'
 main: me.itstautvydas.textfontmodifier.TextFontModifierPlugin
-api-version: '1.19'
+api-version: '1.21'
 author: ItsTauTvyDas
 depend: [ ProtocolLib ]
 commands:
